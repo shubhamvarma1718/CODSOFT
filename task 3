@@ -1,0 +1,26 @@
+task 3: creating a number guessing game
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    srand(time(0)); // Seed the random number generator
+    int number = rand() % 100 + 1; // Generate a random number between 1 and 100
+    int guess;
+
+    std::cout << "Guess a number between 1 and 100: ";
+    while (true) {
+        std::cin >> guess;
+        if (guess > number) {
+            std::cout << "Too high! Try again: ";
+        } else if (guess < number) {
+            std::cout << "Too low! Try again: ";
+        } else {
+            std::cout << "Congratulations! You guessed the number.";
+            break;
+        }
+    }
+
+    return 0;
+}
